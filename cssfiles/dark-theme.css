@@ -1,7 +1,7 @@
 /* DARK THEME CSS FILE -- Jess
 -- This file is the base file for all the other themes. */
 
-[theme = "dark"] {
+:root[data-theme="dark"] {
     --primary-font: 'Montserrat', sans-serif;
     --title-font: 'Montserrat', sans-serif; font-weight: 700;
     --subtitle-font: 'Courier New', monospace;
@@ -14,7 +14,7 @@
 
     --shadow-color: rgba(0, 0, 0, 0.1);
 }
-[theme = "dark"] .nav-upper {
+:root[data-theme="dark"] .nav-upper {
     display: flex;
     background-color: var(--primary-dark);
     align-items: center;
@@ -38,7 +38,7 @@ a, p {
     font-family: var(--primary-font);
     color: #000000;
 }
-[theme = "dark"] .button_1 {
+:root[data-theme="dark"] .button_1 {
     font-family: var(--primary-font);
     color: #000000;
     border: 2px solid var(--tertiary-dark);
@@ -52,7 +52,7 @@ a, p {
     border-color: var(--dark-border-color);
 }
 
-[theme = "dark"] .button_1:hover{
+:root[data-theme="dark"] .button_1:hover{
     transition: background-color 0.3s ease, 
     transform 0.3s ease, 
     color 0.3s ease, 

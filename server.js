@@ -9,9 +9,11 @@ const app = express();
 
 app.use('/cssfiles', express.static('cssfiles'));
 app.use('/jsfiles', express.static('jsfiles'));
+app.use('/javascriptfiles', express.static(path.join(__dirname, 'javascriptfiles')));
 app.get('/', (req, res) => {res.sendFile(path.join(__dirname, 'htmlfiles', 'index.html'));});
 app.get('/theme', (req, res) => {res.sendFile(path.join(__dirname, 'htmlfiles', 'theme.html'));});
 app.get('/controller', (req, res) => {res.sendFile(path.join(__dirname, 'htmlfiles', 'controller.html'));});
+app.get('/auth', (req, res) => {res.sendFile(path.join(__dirname, 'htmlfiles', 'auth.html'));});
     
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
