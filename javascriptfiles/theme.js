@@ -1,9 +1,8 @@
 (function (global) {
-  const SUPABASE_API_KEY = 'sb_key_7L0QUjvbOrbfKT_Gs89g__MXAX9Oi';
-  const SUPABASE_API_KEY_SECRET = 'sb_secret_r_7L0QUjvbOrbfKT_Gs89g__MXAX9Oi';
-  const SUPABASE_URL = 'https://frczbpiyxbqvdrsgyvih.supabase.co/rest/v1/';
+    const SUPABASE_API_KEY = 'sb_key_7L0QUjvbOrbfKT_Gs89g__MXAX9Oi';
+    const SUPABASE_URL = 'https://frczbpiyxbqvdrsgyvih.supabase.co/rest/v1/';
 
-  const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_API_KEY);
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_API_KEY);
 
   let themes = {
     light: true,
