@@ -1,5 +1,4 @@
-const SUPABASE_API_KEY = 'sb_key_7L0QUjvbOrbfKT_Gs89g__MXAX9Oi';
-const SUPABASE_API_KEY_SECRET = 'sb_secret_r_7L0QUjvbOrbfKT_Gs89g__MXAX9Oi';
+const SUPABASE_API_KEY = 'sb_publishable_vZkQ0-GURH8AVI4N9NbsOQ_0XnIDyxS';
 const SUPABASE_URL = 'https://frczbpiyxbqvdrsgyvih.supabase.co/rest/v1/';
 
 // Localhost
