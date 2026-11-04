@@ -1,4 +1,5 @@
 (function (global) {
+
     const SUPABASE_API_KEY = 'sb_publishable_vZkQ0-GURH8AVI4N9NbsOQ_0XnIDyxS';
     const SUPABASE_URL = 'https://frczbpiyxbqvdrsgyvih.supabase.co/rest/v1/';
 
@@ -11,38 +12,44 @@
     custom: false
   };
 
-  function applyThemeFromSupabase(themeName) {
-    supabaseClient
+  async function applyThemeFromSupabase() {
+    const { data, error } = await supabaseClient
       .from('theme_select')
-      .select('*')
-      .eq(themeName, true)
-      .then(response => {
-        if (response.error) {
-          console.error(`Error fetching ${themeName} theme:`, response.error);
-          return;
-        }
-        
-        const themeData = response.data?.[0];
-        if (themeData) {
-          document.documentElement.style.setProperty('--background-color', themeData.background_color);
-          document.documentElement.style.setProperty('--text-color', themeData.text_color);
-          document.documentElement.style.setProperty('--primary-color', themeData.primary_color);
+      .select('light, dark, glass, custom')
+      .order('date', { ascending: false })
+      .limit(1)
+      .maybeSingle();
+
+      if (error) {
+        console.error('Error fetching theme data from Supabase:', error);
+        return;
+      }
+
+      const selectedTheme = Object.keys(themes).find(
+        name => data?.[name] === true
+      );
+
+    if (!selectedTheme) {
+      console.warn('No theme data found in Supabase. Defaulting to light mode.');
+      return;
+    }
+
+    Object.keys(themes).forEach(name => {
+      themes[name] = (name === selectedTheme);
+    });
+
+    document.documentElement.setAttribute('data-theme', selectedTheme);
+    
+    const themeData = data?.[0];
+    if (themeData) {
+      document.documentElement.style.setProperty('--background-color', themeData.background_color);
+      document.documentElement.style.setProperty('--text-color', themeData.text_color);
+      document.documentElement.style.setProperty('--primary-color', themeData.primary_color);
           
           document.documentElement.setAttribute('data-theme', themeName);
         }
-      });
-  }
+      };
 
-  function activeMode(selectedTheme) {
-    if (themes.hasOwnProperty(selectedTheme)) {
-      Object.keys(themes).forEach(theme => {
-        themes[theme] = (theme === selectedTheme);
-      });
-      applyThemeFromSupabase(selectedTheme);
-    } else {
-      console.warn(`Theme "${selectedTheme}" is not recognized.`);
-    }
-  }
 
   global.themeManager = {
     setLightMode: () => activeMode('light'),
@@ -57,4 +64,4 @@
   const startingTheme = Object.keys(themes).find(key => themes[key] === true) || 'light';
   applyThemeFromSupabase(startingTheme);
 
-})(typeof window !== 'undefined' ? window : globalThis);
+}); (typeof window !== 'undefined' ? window : globalThis);
