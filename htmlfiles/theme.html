@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/cssfiles/light-theme.css">
+    <link rel="stylesheet" href="/cssfiles/dark-theme.css">
+    <link rel="stylesheet" href="/cssfiles/liquid-glass-theme.css">
+    <link rel="stylesheet" href="/cssfiles/custom-theme.css">
+
+    <!-- Scripts -->
+
+    <link rel="script" href="/jsfiles/theme-manager.js">
+    <link rel="script" href="/jsfiles/custom-theme-manager.js">
+    <link rel="script" href="/jsfiles/server.js">
+
+    <style>
+        .theme-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .light-theme-card {
+            background-color: var(--primary-light);
+            border: 2px solid var(--tertiary-light);
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .dark-theme-card {
+            background-color: var(--primary-dark);
+            border: 2px solid var(--tertiary-dark);
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .liquid-glass-theme-card {
+            background-color: var(--primary-liquid-glass);
+            border: 2px solid var(--tertiary-liquid-glass);
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .custom-theme-card {
+            background-color: var(--primary-custom);
+            border: 2px solid var(--tertiary-custom);
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="nav-upper">
+        <a class="button_1" href="/">Homepage</a>
+        </div>
+        <h1>Themes</h1>
+        <div class="theme-container">
+            <div class="light-theme-card">
+                <h2>Light Theme</h2>
+                <p>A bright and clean theme with light colors.</p>
+                <button class="button_1" onclick="applyTheme('light')">Apply Light Theme</button>
+            </div>
+            <div class="dark-theme-card">
+                <h2>Dark Theme</h2>
+                <p>A sleek and modern theme with dark colors.</p>
+                <button class="button_1" onclick="applyTheme('dark')">Apply Dark Theme</button>
+            </div>
+            <div class="liquid-glass-theme-card">
+                <h2>Liquid Glass Theme</h2>
+                <p>A unique theme with a glass-like effect.</p>
+                <button class="button_1" onclick="applyTheme('liquid-glass')">Apply Liquid Glass Theme</button>
+            </div>
+            <div class="custom-theme-card">
+                <h2>Custom Theme</h2>
+                <p>Create your own custom theme with personalized colors.</p>
+                <button class="button_1" onclick="applyTheme('custom')">Apply Custom Theme</button>
+            
+         </div>
+    </main>
+</body>
+</html>

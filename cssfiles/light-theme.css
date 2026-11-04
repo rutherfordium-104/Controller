@@ -1,0 +1,66 @@
+/* LIGHT THEME CSS FILE -- Jess
+-- This file is the base file for all the other themes. */
+:root {
+    --primary-font: 'Montserrat', sans-serif;
+    --title-font: 'Montserrat', sans-serif; font-weight: 700;
+    --subtitle-font: 'Courier New', monospace;
+
+    --primary-light: #ffffff;
+    --secondary-light: #e0e0e0;
+    --tertiary-light: #c3c3c3;
+
+    --light-border-color: #4a4a4a;
+
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+.nav-upper {
+    display: flex;
+    background-color: var(--primary-light);
+    align-items: center;
+    box-shadow: 0px 0px 10px var(--shadow-color);
+    border-radius: 10px;
+    border: 2px solid var(--light-border-color);
+    padding: 15px;
+    margin: 0 auto;   
+    margin-top: 40px;       
+    width: 90%;
+    max-width: 1200px;
+    height: 60px;
+    gap: 15px;
+}
+h1, h2, h3, h4 {
+    font-family: var(--title-font);
+    color: #000000;
+}
+a, p {
+    font-family: var(--primary-font);
+    color: #000000;
+}
+.button_1 {
+    font-family: var(--primary-font);
+    color: #000000;
+    border: 2px solid var(--tertiary-light);
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, 
+    transform 0.3s ease, 
+    color 0.3s ease, 
+    box-shadow 0.3s ease;
+    border-color: var(--light-border-color);
+}
+
+.button_1:hover{
+    transition: background-color 0.3s ease, 
+    transform 0.3s ease, 
+    color 0.3s ease, 
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+    background-color: var(--tertiary-light);
+    border-color: var(--secondary-light);
+    color: var(--primary-light);
+    transform:translateY(-2px)
+}
+.button_1:active {
+    transform: translateY(4px);
+}
