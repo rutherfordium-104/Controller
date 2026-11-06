@@ -18,4 +18,8 @@ app.get('/auth', (req, res) => {res.sendFile(path.join(__dirname, 'htmlfiles', '
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Express server running at http://localhost:${PORT}`);
+    console.log(`=== PersonalControllerBoard ===`);
+    console.log(`- An interface to control machinery -`);
+    console.log(`- Created by Jess -`)
+    console.log(`- Supabase & Render & Github -`)
 });
