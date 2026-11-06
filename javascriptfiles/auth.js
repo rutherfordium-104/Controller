@@ -78,18 +78,19 @@ document.getElementById('signOutButton').addEventListener('click', async () => {
     }
 });
 
-async function themePreference(light, dark, glass, custom) {
+async function themePreference() {
     const { data, error } = await supabaseClient
         .schema('public')
         .from('theme_select')
         .insert({
-            light: light,  
-            dark: dark,
-            glass: glass,
-            custom: custom
+            light: true,
+            dark: false,
+            glass: false,
+            custom: false
         })
-        .select('*');
+        .select('*'); 
 
     if (error) throw error;
     return data;
 }
+
