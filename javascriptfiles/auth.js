@@ -82,10 +82,14 @@ async function themePreference(light, dark, glass, custom) {
     const { data, error } = await supabaseClient
         .schema('public')
         .from('theme_select')
-        .insert([
-            {light, dark, glass, custom}
-        ])
-        .select();
+        .insert({
+            light: light,  
+            dark: dark,
+            glass: glass,
+            custom: custom
+        })
+        .select('*');
+
     if (error) throw error;
     return data;
 }
