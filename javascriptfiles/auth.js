@@ -1,7 +1,4 @@
-const SUPABASE_API_KEY = 'sb_publishable_vZkQ0-GURH8AVI4N9NbsOQ_0XnIDyxS';
-const SUPABASE_URL = 'https://frczbpiyxbqvdrsgyvih.supabase.co';
-
-const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_API_KEY);
+const supabaseClient = window.supabaseClient;
 
 async function signUp(email, password, username) {
     const { data, error } = await supabaseClient.auth.signUp({
@@ -77,20 +74,4 @@ document.getElementById('signOutButton').addEventListener('click', async () => {
         showAuthMessage(error.message, true);
     }
 });
-
-async function themePreference() {
-    const { data, error } = await supabaseClient
-        .schema('public')
-        .from('theme_select')
-        .insert({
-            light: true,
-            dark: false,
-            glass: false,
-            custom: false
-        })
-        .select('*'); 
-
-    if (error) throw error;
-    return data;
-}
 
