@@ -14,6 +14,8 @@ app.get('/', (req, res) => {res.sendFile(path.join(__dirname, 'htmlfiles', 'inde
 app.get('/theme', (req, res) => {res.sendFile(path.join(__dirname, 'htmlfiles', 'theme.html'));});
 app.get('/controller', (req, res) => {res.sendFile(path.join(__dirname, 'htmlfiles', 'controller.html'));});
 app.get('/auth', (req, res) => {res.sendFile(path.join(__dirname, 'htmlfiles', 'auth.html'));});
+app.get('')
+
     
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
@@ -22,4 +24,5 @@ app.listen(PORT, () => {
     console.log(`- An interface to control machinery -`);
     console.log(`- Created by Jess -`)
     console.log(`- Supabase & Render & Github -`)
+    console.log(`Express server: PersonalControllerBoard Port: ${PORT}`)
 });

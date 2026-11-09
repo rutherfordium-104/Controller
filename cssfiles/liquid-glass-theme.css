@@ -33,7 +33,7 @@ h1, h2, h3, h4 {
     color: #000000;
 }
 a, p {
-    font-family: var(--glass-font);
+    font-family: var(--primary-font);
     color: #000000;
 }
 :root[data-theme="liquid-glass"] .button_1 {
